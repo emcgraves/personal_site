@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   min-height: 100vh;
@@ -9,7 +8,7 @@ body {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .page-title {
@@ -34,26 +33,29 @@ p {
   height: auto;     /* smaller space above the section */
 }
 .image-text {
-  display: flex;
-  align-items: flex-start;   /* vertical alignment of img and text */
-  gap: 30px;             /* space between image and paragraph */     
-  margin-top: 20px;      /* smaller space above the section */
+  display: flex;                /* horizontal layout on desktop */
+  flex-wrap: wrap;              /* allow wrapping on smaller screens */
+  gap: 0rem;                    /* space between image and text */
+  margin-top: 2rem;             /* normal spacing above section */
+  align-items: center;      /* align text and image at top */
 }
 
 .image-text img {
-  max-width: 800px;           /* keeps image a good size */
-  width: 100%;                /* scale down if screen is narrow */
-  height: auto;
-  margin-top: -10rem;
+  flex: 1 1 300px;              /* allow image to shrink and grow */
+  max-width: 800px;             /* desktop maximum size */
+  width: 100%;                  /* fill available space */
+  height: auto;                 /* maintain aspect ratio */
+  margin-top: -3rem;                
+  border-radius: 12px;          /* optional: rounded corners */
 }
 
 .text-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-right: 200px;
+  flex: 1 1 300px;              /* allow text block to shrink and grow */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 3rem;          /* desktop spacing */
 }
-
 .text-content h3 {
     margin-top: 0;  /* prevent weird extra spacing */
     margin-bottom: 1rem;
@@ -120,26 +122,25 @@ p {
 }
 .skills {
   display: flex;
-  flex-wrap: wrap;        /* wrap badges if too many */
-  gap: 0.5rem;            /* spacing between badges */
-  justify-content: center; /* center badges inside card */
-  margin-top: 1rem;       /* space from job description */
+  flex-wrap: wrap;       
+  gap: 0.5rem;            
+  justify-content: center; 
+  margin-top: 1rem;       
 }
 
 .skill {
-  background-color: #d9c8f5;  /* light purple */
-  color: #26052f;             /* text colour */
-  border-radius: 12px;        /* rounded rectangle */
-  padding: 0.3rem 0.8rem;     /* vertical and horizontal padding */
-  font-size: 0.9rem;
+  background-color: #d9c8f5;  
+  color: #26052f;         
+  border-radius: 12px;        
+  padding: 0.3rem 0.8rem;     
   font-weight: 600;
   display: inline-block;
   transition: transform 0.2s, background-color 0.2s;
 }
 
 .skill:hover {
-  background-color: #b497f0;  /* darker on hover */
-  transform: translateY(-2px); /* subtle lift */
+  background-color: #b497f0; 
+  transform: translateY(-2px); 
   cursor: default;
 }
 .icon-row {
@@ -151,7 +152,7 @@ p {
 }
 
 .icon-row img {
-  width: 40px;      /* adjust size */
+  width: 40px;      
   height: auto;
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -160,4 +161,20 @@ p {
 .icon-row img:hover {
   transform: scale(1.15);
   opacity: 0.8;
+}
+@media (max-width: 768px) {
+  .image-text {
+    flex-direction: column;     
+    align-items: center;        
+    gap: 1.5rem;               
+  }
+
+  .text-content {
+    padding-right: 0;          
+    text-align: center;        
+  }
+
+  .image-text img {
+    max-width: 90%;             
+  }
 }
