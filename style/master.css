@@ -1,0 +1,163 @@
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: block;
+  place-content: top;
+  background: #faf8fd;
+  font-family: "Work Sans", system-ui;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.page-title {
+  font-family: "Rock 3D", system-ui;
+  text-align: center;
+  font-size: 7rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  color: #26052f;
+}
+
+.page-subtitle {
+  font-family: "Work Sans", system-ui;
+  text-align: center;
+  font-size: 2rem;
+  color: #26052f;
+}
+.logo {
+  display: block;
+  margin: 1rem auto 2rem auto; /* center horizontally + add spacing */
+  width: 150px;                /* adjust size here */
+  height: auto;     /* smaller space above the section */
+}
+.image-text {
+  display: flex;
+  align-items: flex-start;   /* vertical alignment of img and text */
+  gap: 30px;             /* space between image and paragraph */     
+  margin-top: 20px;      /* smaller space above the section */
+}
+
+.image-text img {
+  max-width: 800px;           /* keeps image a good size */
+  width: 100%;                /* scale down if screen is narrow */
+  height: auto;
+  margin-top: -10rem;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 200px;
+}
+
+.text-content h3 {
+    margin-top: 0;  /* prevent weird extra spacing */
+    margin-bottom: 1rem;
+    font-size: 1.3rem; /* optional */
+}           
+
+.wavy {
+  animation-name: wavy;
+  animation-duration: 1.3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+@keyframes wavy {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -15px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+.logic-word { color: #0d9eff; }
+.creativity-word { color: #bd2653; }
+
+.jobs-container {
+  display: flex;
+  flex-wrap: wrap;         /* allows wrapping on smaller screens */
+  gap: 20px;               /* spacing between squares */
+  justify-content: center; /* center the cards horizontally */
+  margin-top: 2rem;        /* space from previous section */
+}
+
+.job-card {
+  background-color:  #fbf8ff;   /* light background */
+  border-radius: 20px;          /* rounded corners */
+  padding: 1.5rem 2rem;         /* internal spacing */
+  width: 200px;                 /* fixed width */
+  text-align: center;           /* center text */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* soft shadow */
+  transition: transform 0.2s, box-shadow 0.2s; /* hover effect */
+}
+
+.job-card:hover {
+  transform: translateY(-5px);  /* subtle lift */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.job-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #26052f;
+}
+
+.job-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;        /* wrap badges if too many */
+  gap: 0.5rem;            /* spacing between badges */
+  justify-content: center; /* center badges inside card */
+  margin-top: 1rem;       /* space from job description */
+}
+
+.skill {
+  background-color: #d9c8f5;  /* light purple */
+  color: #26052f;             /* text colour */
+  border-radius: 12px;        /* rounded rectangle */
+  padding: 0.3rem 0.8rem;     /* vertical and horizontal padding */
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.skill:hover {
+  background-color: #b497f0;  /* darker on hover */
+  transform: translateY(-2px); /* subtle lift */
+  cursor: default;
+}
+.icon-row {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.icon-row img {
+  width: 40px;      /* adjust size */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon-row img:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
